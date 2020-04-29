@@ -47,7 +47,7 @@ public class UserMenuController {
     @RequestMapping("/getUserInfoList")
     @RequiresPermissions("sys:user:info")
     public Map<String, Object> getUserInfoList() {
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>(1);
         List<SysUserEntity> sysUserEntityList = sysUserService.list();
         map.put("sysUserEntityList", sysUserEntityList);
         return map;
@@ -63,7 +63,7 @@ public class UserMenuController {
     @RequestMapping("/getRoleInfoList")
     @RequiresPermissions("sys:user:info")
     public Map<String, Object> getRoleInfoList() {
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>(1);
         List<SysRoleEntity> sysRoleEntityList = sysRoleService.list();
         map.put("sysRoleEntityList", sysRoleEntityList);
         return map;
@@ -79,7 +79,7 @@ public class UserMenuController {
     @RequestMapping("/getMenuInfoList")
     @RequiresPermissions("sys:menu:info")
     public Map<String, Object> getMenuInfoList() {
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>(1);
         List<SysMenuEntity> sysMenuEntityList = sysMenuService.list();
         map.put("sysMenuEntityList", sysMenuEntityList);
         return map;
@@ -95,7 +95,7 @@ public class UserMenuController {
     @RequestMapping("/getInfoAll")
     @RequiresPermissions("sys:info:all")
     public Map<String, Object> getInfoAll() {
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>(3);
         List<SysUserEntity> sysUserEntityList = sysUserService.list();
         map.put("sysUserEntityList", sysUserEntityList);
         List<SysRoleEntity> sysRoleEntityList = sysRoleService.list();
@@ -122,7 +122,7 @@ public class UserMenuController {
         // 清除缓存
         String username = "admin";
         ShiroUtil.deleteCache(username, false);
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>(2);
         map.put("code", 200);
         map.put("msg", "权限添加成功");
         return map;

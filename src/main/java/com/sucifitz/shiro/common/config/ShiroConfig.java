@@ -30,7 +30,9 @@ public class ShiroConfig {
     private final String SESSION_KEY = "shiro:session";
     private final int EXPIRE = 1800;
 
-    // Redis配置
+    /**
+    * Redis配置
+    **/
     @Value("${spring.redis.host}")
     private String host;
     @Value("${spring.redis.port}")
